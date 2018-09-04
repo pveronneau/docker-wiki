@@ -10,8 +10,8 @@ services:
         - backup-volume:/backup
         - mediawiki-volume:/opt/mediawiki
         - images-volume:/opt/mediawiki/images
-    ports: 
-        - 9000:9000
+    expose: 
+        - 9000
   nginx:
     build: ./nginx
     image: nginx
@@ -35,17 +35,17 @@ services:
       - backup-volume:/restore/
     environment:
       - MYSQL_ROOT_PASSWORD=CHANGETHIS
-    ports:
-      - 3306:3306
+    expose:
+      - 3306
   elasticsearch_01:
     build: ./elastic_search
     image: elasticsearch:5
     container_name: elasticsearch_01
     volumes:
       - elastic-volume-01:/usr/share/elasticsearch/data/
-    ports:
-      - 9200:9200
-      - 9300:9300
+    expose:
+      - 9200
+      - 9300
 volumes:
   mediawiki-volume:
   images-volume:
