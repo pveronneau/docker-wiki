@@ -12,6 +12,8 @@ services:
         - images-volume:/opt/mediawiki/images
     expose: 
         - 9000
+    environment:
+      - MYSQL_ROOT_PASSWORD=${SQLPASSWORD}
   nginx:
     build: ./nginx
     image: nginx
@@ -34,7 +36,7 @@ services:
       - database-volume:/var/lib/mysql
       - backup-volume:/restore/
     environment:
-      - MYSQL_ROOT_PASSWORD=CHANGETHIS
+      - MYSQL_ROOT_PASSWORD=${SQLPASSWORD}
     expose:
       - 3306
   elasticsearch_01:

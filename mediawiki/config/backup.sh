@@ -19,7 +19,7 @@
  
 wikidb="wikidb"                 # the database your wiki stores data in
 #mysqlopt="-u username -ppassword"   # any options used for interacting with mysql
-mysqlopt="-u root --password=CHANGETHIS"       # usually empty if username and password are provided in your .my.cnf
+mysqlopt="-u root --password=$MYSQL_ROOT_PASSWORD"       # usually empty if username and password are provided in your .my.cnf
  
 wikidir=/opt/mediawiki                    # the directory mediawiki is installed in
 backupdir=/backup                      # the directory to write the backup to
