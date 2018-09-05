@@ -13,7 +13,7 @@ services:
     expose: 
         - 9000
     environment:
-      - MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
   nginx:
     build: ./nginx
     image: nginx
@@ -36,7 +36,7 @@ services:
       - database-volume:/var/lib/mysql
       - backup-volume:/restore/
     environment:
-      - MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     expose:
       - 3306
   elasticsearch_01:
