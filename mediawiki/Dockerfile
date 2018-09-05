@@ -81,6 +81,6 @@ COPY config/update.sh /update.sh
 #RUN cd /opt/mediawiki/ && php maintenance/update.php --quick --skip-external-dependencies 
 
 VOLUME /opt/mediawiki/
-
+ENV MYSQL_ROOT_PASSWORD null
 EXPOSE 9000
 CMD ["/usr/local/sbin/php-fpm", "-Rc", "/usr/local/etc/php-fpm.conf"]
