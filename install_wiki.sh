@@ -1,9 +1,4 @@
 #!/bin/bash
-# Verify this is run by root
-if [ "$(id -u)" != "0" ]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
-fi
 echo "Enter the desired SQL root password:"
 read -s TYPED_PASS
 export MYSQL_ROOT_PASSWORD=$TYPED_PASS
