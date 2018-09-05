@@ -4,9 +4,8 @@ if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
    exit 1
 fi
-echo "Enter the desired SQL password:"
-read -s SQLPASSWORD
-echo -n "SQLPASSSWORD=$SQLPASSWORD" > .env
+echo "Enter the desired SQL root password:"
+read -s MYSQL_ROOT_PASSWORD
 # Increase map count for elastic search
 sysctl -w vm.max_map_count=262144
 cat << EOF > /usr/lib/sysctl.d/70-elastic.conf 
