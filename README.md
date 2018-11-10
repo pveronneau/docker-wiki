@@ -1,7 +1,9 @@
 # docker-wiki
+
 I created this as a proof of concept deployment of a php webapp segmented into different containers.  I have not tested it, so expect bugs.  
 
-## How to run the build.
+## How to run the build
+
 Run the `setup_cert.sh` script, or ensure the ssl certificates are properly referenced in the docker-compose.yml  
 Run the `install_wiki.sh` script  
 Run the media wiki installer by navigating to the web server on your docker host.  
