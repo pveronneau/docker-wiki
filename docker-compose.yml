@@ -25,8 +25,8 @@ services:
         #- /path-to-generated-LocalSettings.php:/opt/mediawiki/LocalSettings.php
         #- /path-to-extra_settings.php:/opt/mediawiki/extra_settings.php
         - images-volume:/opt/mediawiki/images
-        - /root/.acme.sh/${HOSTNAME}/${HOSTNAME}.cer:/opt/ssl/server.cer:ro
-        - /root/.acme.sh/${HOSTNAME}/${HOSTNAME}.key:/opt/ssl/server.key:ro
+        - /etc/letsencrypt/live/${HOSTNAME}/cert.pem:/opt/ssl/server.cer:ro
+        - /etc/letsencrypt/live/${HOSTNAME}/privkey.pem:/opt/ssl/server.key:ro
     ports:
       - 80:80
       - 443:443
